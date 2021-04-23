@@ -27,6 +27,9 @@ export default () => {
           height={50}
         />
         <form
+          onChange={()=>{
+            setData(e.target.name, e.target.value ?? e.target.value)
+          }}
           onSubmit={handleSubmit}
           className="mt-8 overflow-hidden bg-white rounded-lg shadow-xl"
         >
@@ -40,7 +43,6 @@ export default () => {
               type="email"
               errors={errors.email}
               value={data.email}
-              onChange={e => setData('email', e.target.value)}
             />
             <TextInput
               className="mt-6"
@@ -49,7 +51,6 @@ export default () => {
               type="password"
               errors={errors.password}
               value={data.password}
-              onChange={e => setData('password', e.target.value)}
             />
             <label
               className="flex items-center mt-6 select-none"
@@ -61,7 +62,6 @@ export default () => {
                 className="mr-1"
                 type="checkbox"
                 checked={data.remember}
-                onChange={e => setData('remember', e.target.checked)}
               />
               <span className="text-sm">Remember Me</span>
             </label>
