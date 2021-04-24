@@ -12,6 +12,7 @@ export default () => {
     password: 'secret',
     remember: true
   });
+  postgres://anekqycdsddrjc:43224b1f101d93a7b3186b50fc8a0f41c3b0c25ea1a4b3a0aafbd69eae138592@ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/daq7kdrfakis69
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -42,7 +43,7 @@ export default () => {
               name="email"
               type="email"
               errors={errors.email}
-              value={data.email}
+              defaultValue={data.email}
             />
             <TextInput
               className="mt-6"
@@ -50,7 +51,7 @@ export default () => {
               name="password"
               type="password"
               errors={errors.password}
-              value={data.password}
+              defaultValue={data.password}
             />
             <label
               className="flex items-center mt-6 select-none"
@@ -61,7 +62,7 @@ export default () => {
                 id="remember"
                 className="mr-1"
                 type="checkbox"
-                checked={data.remember}
+                defaultChecked={data.remember}
               />
               <span className="text-sm">Remember Me</span>
             </label>
