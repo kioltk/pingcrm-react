@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { Inertia } from '@inertiajs/inertia';
 import { useForm } from '@inertiajs/inertia-react';
@@ -9,7 +9,12 @@ import TextInput from '@/Shared/TextInput';
 export default () => {
   const { data, setData, errors, post, processing } = useForm();
 
+  useEffect(() => {
+    console.log('new data=', data);
+  }, [JSON.stringify(data)]);
+
   function handleSubmit(e) {
+    console.log('submit clicked, data=', data);
     e.preventDefault();
     post(route('login.attempt'));
   }
@@ -23,8 +28,8 @@ export default () => {
           height={50}
         />
         <form
-          onChange={(e)=>{
-            setData(e.target.name, e.target.value ?? e.target.value)
+          onChange={e => {
+            setData(e.target.name, e.target.value ?? e.target.checked);
           }}
           onSubmit={handleSubmit}
           className="mt-8 overflow-hidden bg-white rounded-lg shadow-xl"
