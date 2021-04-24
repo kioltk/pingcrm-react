@@ -12,7 +12,6 @@ export default () => {
     password: 'secret',
     remember: true
   });
-  postgres://anekqycdsddrjc:43224b1f101d93a7b3186b50fc8a0f41c3b0c25ea1a4b3a0aafbd69eae138592@ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/daq7kdrfakis69
 
   function handleSubmit(e) {
     e.preventDefault();
