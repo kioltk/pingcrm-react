@@ -7,11 +7,7 @@ import LoadingButton from '@/Shared/LoadingButton';
 import TextInput from '@/Shared/TextInput';
 
 export default () => {
-  const { data, setData, errors, post, processing } = useForm({
-    email: 'johndoe@example.com',
-    password: 'secret',
-    remember: true
-  });
+  const { data, setData, errors, post, processing } = useForm();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -42,7 +38,6 @@ export default () => {
               name="email"
               type="email"
               errors={errors.email}
-              defaultValue={data.email}
             />
             <TextInput
               className="mt-6"
@@ -50,7 +45,6 @@ export default () => {
               name="password"
               type="password"
               errors={errors.password}
-              defaultValue={data.password}
             />
             <label
               className="flex items-center mt-6 select-none"
@@ -61,7 +55,6 @@ export default () => {
                 id="remember"
                 className="mr-1"
                 type="checkbox"
-                defaultChecked={data.remember}
               />
               <span className="text-sm">Remember Me</span>
             </label>
