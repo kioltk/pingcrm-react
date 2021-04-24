@@ -27,7 +27,7 @@ export default () => {
           height={50}
         />
         <form
-          onChange={()=>{
+          onChange={(e)=>{
             setData(e.target.name, e.target.value ?? e.target.value)
           }}
           onSubmit={handleSubmit}
