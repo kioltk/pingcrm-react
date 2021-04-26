@@ -38,7 +38,12 @@ export default () => {
         <button onClick={() => setIsOpen(false)}>Cancel</button>
       </Dialog>
       <div className='w-full max-w-md'>
-        <button>Open Dialog</button>
+
+        <div
+          className='mt-8 overflow-hidden bg-white rounded-lg shadow-xl'
+        >
+          <button className='btn-indigo' onClick={() => setIsOpen(true)}>Open Dialog</button>
+        </div>
       </div>
     </div>
   );
